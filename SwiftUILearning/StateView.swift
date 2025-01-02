@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct StateView: View {
+    
+    @State var myName = "yakup"
+    @State var changeName = "pikachu"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(myName).padding()
+            Button(action: {
+                myName = "Pikachu"
+            }) {
+                Text("My Button")
+            }
+            Text(changeName)
+            TextField("Place Holder", text: $changeName)
+        }
     }
 }
 

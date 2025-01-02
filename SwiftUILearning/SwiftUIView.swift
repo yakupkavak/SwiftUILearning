@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    
+    var chosenFavoriteElement: FavoriteElementModel
+    
+    let myArray = ["James","Pikachu","Melis Sama"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(chosenFavoriteElement.name)
+            Image(chosenFavoriteElement.imageName).resizable().aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.main.bounds.width / 3,height: UIScreen.main.bounds.width / 3)
+            Text(chosenFavoriteElement.description)
+                
+        }
+        /*
+        List (myArray, id: \.self) { element in
+            Image("pikachu").resizable().aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.main.bounds.width / 3,height: UIScreen.main.bounds.width / 3)
+            Text(element)
+         }
+         */
     }
 }
 
 #Preview {
-    SwiftUIView()
+    SwiftUIView(chosenFavoriteElement: pikachu)
 }
